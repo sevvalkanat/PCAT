@@ -36,6 +36,16 @@ app.get('/',async(req,res) =>  {
         photos
     })
 });
+
+app.get('/photos/:id',(req,res) =>  {
+   // console.log(req.params.id)
+    // res.render('photos')
+    const photo = photo.findById(req.params.id)
+    res.render('photo',{
+        photo
+    })
+
+});   
 app.get('/about',(req,res) =>  {
     res.render('about')
 });
